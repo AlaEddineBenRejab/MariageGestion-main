@@ -1,0 +1,37 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}CentresMariages{% endblock %}
+
+                 {% block content %}
+    <h1>CentresMariages</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ centres_mariage.id }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ centres_mariage.prix }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><img src="{{ asset ('uploads/'~ centres_mariage.photo)  }}"></td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ centres_mariage.nom }}</td>
+            </tr>
+            <tr>
+                <th>Pack</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_centres_mariages_index') }}">back to list</a>
+
+    <a href="{{ path('app_centres_mariages_edit', {'id': centres_mariage.id}) }}">edit</a>
+
+    {{ include('centres_mariages/_delete_form.html.twig') }}
+{% endblock %}

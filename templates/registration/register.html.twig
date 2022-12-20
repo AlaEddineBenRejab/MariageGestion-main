@@ -1,0 +1,77 @@
+{% extends 'base-front.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block Content %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <title>Login and Registration Form in HTML | CodingNepal</title>
+        <link rel="stylesheet" href="{{ asset('base-front/stylei.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+    <div class="wrapper container-xxl">
+        <div class="title">S'inscrire</div>
+        <br>
+            <div class="form-inner" style="align-content: center">
+                <form method="post" style="padding-left: 60px">
+                    {{ form_start(registrationForm)}}
+                    <h6>Email</h6>
+                    {{ form_widget(registrationForm.email) }}
+                    <br>
+                    <h6>Mot de passe</h6>
+                    {{ form_widget(registrationForm.plainPassword) }}
+                    <br>
+                    <h6>Nom</h6>
+                    {{ form_widget(registrationForm.FirstName) }}
+                    <br>
+                    <h6>Prenom</h6>
+                    {{ form_widget(registrationForm.LastName) }}
+                    <br>
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <div class="field btn" >
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Register" href="{{path('home')}}">
+                    </div>
+
+                    {{ form_end(registrationForm) }}
+
+                    <!--div class="signup-link">
+                       Not a member? <a href="">Signup now</a>
+                    </div-->
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (()=>{
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (()=>{
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (()=>{
+            signupBtn.click();
+            return false;
+        });
+    </script>
+    </body>
+
+{% endblock %}
+

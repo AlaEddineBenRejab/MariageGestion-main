@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - Moderna Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link rel="stylesheet" href="{{ asset('base-front/css/animate.min.css')}}" >
+    <link rel="stylesheet" href="{{ asset('base-front/css/aos.css')}}" >
+    <link href="{{ asset('base-front/css/bootstrap.min.css')}}" rel="stylesheet" >
+    <link href="{{ asset('base-front/css/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('base-front/css/style.css')}}" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Moderna - v4.10.1
+    * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+
+
+
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Cartes d'invitaions</h2>
+
+                <ol>
+                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li>Cartes d'invitaions</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Blog Section ======= -->
+                    {% for carte in cartes %}
+
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-8 entries">
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <h3> <img src="{{ asset ('uploads/'~ carte.photo)  }}" alt="" class="img-fluid"/></h3>
+                        </div>
+
+                        {#<h2 class="entry-title">
+                            <a href="">{{ carte.nom }}</a>
+                        </h2>#}
+                        <h2 >
+                            <a href="">Prix</a>
+                        </h2>
+                        <h2 >
+                            <a href="">{{ carte.prix }}</a>
+                        </h2>
+                        {# <div class="entry-content">
+                            <p>
+                                Centre Amouri Faten offre à ces clients un forfait mariage
+                                qui contient maquillage , faux cils , capsule , teinture avec un prix de 650 au lieu de 800
+                            </p>
+                            <div class="read-more">
+                                <!--a href="blog-single.html">Read More</a-->
+                            </div>
+                        </div>  #}
+
+                    </article><!-- End blog entry -->
+
+
+                </div><!-- End blog entries list -->
+
+            
+
+        </div>
+        </div>
+    </section><!-- End Blog Section -->
+                {% endfor %}
+    </div>
+            <div><button class="button" ><a href ="{{ path('app_carte_invitation_front_new') }}"><span>Ajouter une Carte </span></a></button>
+
+            </div>
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<script src="{{ asset('base-front/js/purecounter_vanilla.js')}}"></script>
+<script src="{{ asset('base-front/js/aos.js')}}"></script>
+<script src="{{ asset('base-front/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('base-front/js/glightbox.min.js')}}"></script>
+<script src="{{ asset('base-front/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{ asset('base-front/js/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('base-front/js/noframework.waypoints.js')}}"></script>
+<script src="{{ asset('base-front/js/validate.js')}}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}CentresMariages index{% endblock %}
+
+                 {% block content %}
+    <h1>CentresMariages index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Pack</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for centres_mariage in centres_mariages %}
+            <tr>
+                <td>{{ centres_mariage.id }}</td>
+                <td>{{ centres_mariage.prix }}</td>
+                <td><img src="{{ asset ('uploads/'~ centres_mariage.photo)  }}" style="width:80px;height: 50px"></td>
+                <td>{{ centres_mariage.nom }}</td>
+                <td>{{ centres_mariage.pack }}</td>
+                <td>
+                    <a href="{{ path('app_centres_mariages_show', {'id': centres_mariage.id}) }}"  type="button" class="btn btn-primary waves-effect waves-light">show</a>
+                    <a href="{{ path('app_centres_mariages_edit', {'id': centres_mariage.id}) }}"  type="button" class="btn btn-success waves-effect waves-light">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_centres_mariages_new') }}"type="button" class="btn btn-primary waves-effect waves-light">Create new</a>
+{% endblock %}

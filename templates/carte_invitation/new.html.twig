@@ -1,0 +1,11 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}New CarteInvitation{% endblock %}
+
+                 {% block content %}
+    <h1>Create new CarteInvitation</h1>
+
+    {{ include('carte_invitation/_form.html.twig') }}
+
+    <a href="{{ path('app_carte_invitation_index') }}"type="button" class="btn btn-primary waves-effect waves-light">back to list</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--www.codingflicks.com--> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Annonce centre de mariage </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+	<link href="{{ asset('base-front/css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+	<div class="form-box">
+		<div class="header-text">
+			Centre de mariage
+		</div>
+		{{ form_start(form)}}
+                    <h6>Nom</h6>
+                    {{ form_widget(form.nom) }}
+                    <br>
+                    <h6>Prix</h6>
+                    {{ form_widget(form.prix) }}
+                    <br>
+                    <h6>Pack</h6>
+                    {{ form_widget(form.pack) }}
+                    <br>
+                    <h6>Photo</h6>
+                    {{ form_widget(form.photo) }}
+                    <br>
+                    <div class="text-center" >
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Publier" href="{{path('app_centre_de_mariage')}}">
+                    </div>
+                    {{ form_end(form) }}
+			
+	</div>		
+    <!--Script-->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}New SallesDesFetes{% endblock %}
+
+                 {% block content %}
+    <h1>Create new SallesDesFetes</h1>
+
+    {{ include('salles_des_fetes/_form.html.twig') }}
+
+    <a href="{{ path('app_salles_des_fetes_index') }}">back to list</a>
+{% endblock %}

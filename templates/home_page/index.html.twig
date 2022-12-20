@@ -1,0 +1,152 @@
+{% extends 'base-front.html.twig' %}
+
+
+{% block Content %}
+<h6> Cartes d'invitations </h6>
+<br>
+<br>
+<section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                {% for carte in cartes %}
+                <div class="col-lg-8 entries">
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <h3> <img src="{{ asset ('uploads/'~ carte.photo)  }}" alt="" class="img-fluid"/></h3>
+                        </div>
+
+                        {#<h2 class="entry-title">
+                            <a href="">{{ carte.nom }}</a>
+                        </h2>#}
+                        <h2 >
+                            <a href="">Prix</a>
+                        </h2>
+                        <h2 >
+                            <a href="">{{ carte.prix }}</a>
+                        </h2>
+                        {# <div class="entry-content">
+                            <p>
+                                Centre Amouri Faten offre à ces clients un forfait mariage
+                                qui contient maquillage , faux cils , capsule , teinture avec un prix de 650 au lieu de 800
+                            </p>
+                            <div class="read-more">
+                                <!--a href="blog-single.html">Read More</a-->
+                            </div>
+                        </div>  #}
+
+                    </article><!-- End blog entry -->
+
+
+                </div><!-- End blog entries list -->
+
+            </div>
+            {% endfor %}
+            <div><button class="button" ><a href =""><span>Ajouter une Carte </span></a></button>
+
+            </div>
+
+        </div>
+        </div>
+    </section><!-- End Blog Section -->
+    <h6> Centres de mariage </h6>
+    <br>
+    <br>
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                {% for centre in centres %}
+                <div class="col-lg-8 entries">
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <h3> <img src="{{ asset ('uploads/'~ centre.photo)  }}" alt="" class="img-fluid"/></h3>
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="">{{ centre.nom }}</a>
+                        </h2>
+                        <h2 >
+                            <a href="">Prix</a>
+                        </h2>
+                        <h2 >
+                            <a href="">{{ centre.prix }}</a>
+                        </h2>
+                        {# <div class="entry-content">
+                            <p>
+                                Centre Amouri Faten offre à ces clients un forfait mariage
+                                qui contient maquillage , faux cils , capsule , teinture avec un prix de 650 au lieu de 800
+                            </p>
+                            <div class="read-more">
+                                <!--a href="blog-single.html">Read More</a-->
+                            </div>
+                        </div>  #}
+
+                    </article><!-- End blog entry -->
+
+
+                </div><!-- End blog entries list -->
+
+                </div>
+                {% endfor %}
+                <div><button class="button" ><a href =""><span>Ajouter un Centre </span></a></button>
+
+                </div>
+
+            </div>
+        </div>
+        <h6> Salles des fetes </h6>
+        <br>
+        <br>
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                {% for salle in salles %}
+                <div class="col-lg-8 entries">
+
+                    <article class="entry">
+
+                        <div class="entry-img">
+                            <h3> <img src="{{ asset ('uploads/'~ salle.photo)  }}" alt="" class="img-fluid"/></h3>
+                        </div>
+
+                        <h2 class="entry-title">
+                            <a href="">{{ salle.nom }}</a>
+                        </h2>
+                        <h2 >
+                            <a href="">Prix</a>
+                        </h2>
+                        <h2 >
+                            <a href="">{{ salle.prix }}</a>
+                        </h2>
+                        {<div class="entry-content">
+                            <p>
+                                <a href="">{{ salle.pack }}</a>
+
+                            </p>
+                            <div class="read-more">
+                                <!--a href="blog-single.html">Read More</a-->
+                            </div>
+                        </div>
+
+                    </article><!-- End blog entry -->
+
+
+                </div><!-- End blog entries list -->
+
+            </div>
+            {% endfor %}
+            <div><button class="button" ><a href ="{{ path('app_centres_mariages_new_front') }}"><span>Ajouter une Salle des fetes </span></a></button>
+
+            </div>
+
+        </div>
+        </div>
+    </section><!-- End Blog Section -->
+{% endblock %}

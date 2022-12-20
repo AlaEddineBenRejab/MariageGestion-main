@@ -1,0 +1,13 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Edit CarteInvitation{% endblock %}
+
+                 {% block content %}
+    <h1>Edit CarteInvitation</h1>
+
+    {{ include('carte_invitation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_carte_invitation_index') }}"type="button" class="btn btn-primary waves-effect waves-light">back to list</a>
+
+    {{ include('carte_invitation/_delete_form.html.twig') }}
+{% endblock %}

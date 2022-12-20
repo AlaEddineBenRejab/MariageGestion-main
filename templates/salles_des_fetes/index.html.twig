@@ -1,0 +1,41 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}SallesDesFetes index{% endblock %}
+
+                 {% block content %}
+    <h1>SallesDesFetes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Pack</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salles_des_fete in salles_des_fetes %}
+            <tr>
+                <td>{{ salles_des_fete.id }}</td>
+                <td>{{ salles_des_fete.prix }}</td>
+                <center><td><img src="{{ asset ('uploads/'~ salles_des_fete.photo)  }}" style="width:80px;height: 50px"></td></center>
+                <td>{{ salles_des_fete.nom }}</td>
+                <td>{{ salles_des_fete.pack }}</td>
+                <td>
+                    <a href="{{ path('app_salles_des_fetes_show', {'id': salles_des_fete.id}) }}"type="button" class="btn btn-primary waves-effect waves-light">show</a>
+                    <a href="{{ path('app_salles_des_fetes_edit', {'id': salles_des_fete.id}) }}"type="button" class="btn btn-success waves-effect waves-light">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_salles_des_fetes_new') }}"type="button" class="btn btn-primary waves-effect waves-light">Create new</a>
+{% endblock %}

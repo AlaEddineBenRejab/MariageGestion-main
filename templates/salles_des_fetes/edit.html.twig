@@ -1,0 +1,13 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Edit SallesDesFetes{% endblock %}
+
+                 {% block content %}
+    <h1>Edit SallesDesFetes</h1>
+
+    {{ include('salles_des_fetes/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_salles_des_fetes_index') }}"type="button" class="btn btn-primary waves-effect waves-light">back to list</a>
+
+    {{ include('salles_des_fetes/_delete_form.html.twig') }}
+{% endblock %}

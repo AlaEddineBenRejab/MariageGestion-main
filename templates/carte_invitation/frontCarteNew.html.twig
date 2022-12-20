@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - Moderna Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link rel="stylesheet" href="{{ asset('base-front/css/animate.min.css')}}" >
+    <link rel="stylesheet" href="{{ asset('base-front/css/aos.css')}}" >
+    <link href="{{ asset('base-front/css/bootstrap.min.css')}}" rel="stylesheet" >
+    <link href="{{ asset('base-front/css/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('base-front/css/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('base-front/css/style.css')}}" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Moderna - v4.10.1
+    * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex justify-content-between align-items-center">
+
+
+
+
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Cartes d'invitaions</h2>
+
+                <ol>
+                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li>Cartes d'invitaions</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Blog Section ======= -->
+   <form method="post" style="padding-left: 60px">
+                    {{ form_start(form)}}
+                    <h6>Prix</h6>
+                    {{ form_widget(form.prix) }}
+                    <br>
+                    <h6>description</h6>
+                    {{ form_widget(form.decription) }}
+                    <br>
+                    <h6>photo</h6>
+                    {{ form_widget(form.photo) }}
+                    <br>
+                    <div class="field btn" >
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Save" href="{{path('app_carte_invitation_front')}}">
+                    </div>
+
+                    {{ form_end(form) }}
+
+                    <!--div class="signup-link">
+                       Not a member? <a href="">Signup now</a>
+                    </div-->
+                </form>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<script src="{{ asset('base-front/js/purecounter_vanilla.js')}}"></script>
+<script src="{{ asset('base-front/js/aos.js')}}"></script>
+<script src="{{ asset('base-front/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('base-front/js/glightbox.min.js')}}"></script>
+<script src="{{ asset('base-front/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{ asset('base-front/js/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('base-front/js/noframework.waypoints.js')}}"></script>
+<script src="{{ asset('base-front/js/validate.js')}}"></script>
+
+</body>
+
+</html>
